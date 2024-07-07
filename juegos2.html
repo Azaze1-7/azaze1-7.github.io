@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcade Tadeo - Videojuegos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #2A3F54;
+            color: #fff;
+            padding-top: 60px; /* Ajuste para espacio del navbar fijo */
+        }
+        .navbar {
+            background-color: #343A40; /* Cambio de color del navbar */
+        }
+        .game-card {
+            background-color: #3A4F63;
+            border: none;
+            transition: transform 0.2s;
+        }
+        .game-card:hover {
+            transform: scale(1.05);
+        }
+        .game-card img {
+            border-radius: 5px 5px 0 0;
+        }
+        .game-title {
+            color: #fff;
+            font-size: 1.25rem;
+        }
+        .badge {
+            background-color: #007BFF; /* Color del badge */
+        }
+        .panel-control {
+            background-color: #343A40;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <a class="navbar-brand" href="ARCADE2.html">Arcade Tadeo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="ARCADE2.html">Inicio</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="juegos2.html">Juegos <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contacto2.html">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Game Offers Section -->
+    <section class="container mt-5" id="games">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <a href="https://elgoog.im/breakout/" class="text-decoration-none text-dark" target="_blank">
+                    <div class="card game-card">
+                        <img src="imagenes/bk.jpeg" class="card-img-top" alt="Atari Breakout">
+                        <div class="card-body">
+                            <h5 class="game-title">Atari Breakout</h5>
+                            <span class="badge badge-info">Gratis</span>
+                            <p class="card-text">Jugar ahora</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mb-4">
+                <a href="https://elgoog.im/dinosaur-game/3d/" class="text-decoration-none text-dark" target="_blank">
+                    <div class="card game-card">
+                        <img src="imagenes/T rex.jpeg" class="card-img-top" alt="T Rex Run 3D">
+                        <div class="card-body">
+                            <h5 class="game-title">T Rex Run 3D</h5>
+                            <span class="badge badge-info">Gratis</span>
+                            <p class="card-text">Jugar ahora</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mb-4">
+                <a href="https://elgoog.im/snake/" class="text-decoration-none text-dark" target="_blank">
+                    <div class="card game-card">
+                        <img src="imagenes/snake.png" class="card-img-top" alt="Snake">
+                        <div class="card-body">
+                            <h5 class="game-title">Snake</h5>
+                            <span class="badge badge-info">Gratis</span>
+                            <p class="card-text">Jugar ahora</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mb-4">
+                <a href="https://www.crazygames.com/game/fireboy-and-watergirl-1-forest-temple" class="text-decoration-none text-dark" target="_blank">
+                    <div class="card game-card">
+                        <img src="imagenes/fbywg.jpeg" class="card-img-top" alt="Fireboy and Watergirl">
+                        <div class="card-body">
+                            <h5 class="game-title">Fireboy and Watergirl</h5>
+                            <span class="badge badge-info">Gratis</span>
+                            <p class="card-text">Jugar ahora</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mb-4">
+                <a href="https://www.crazygames.com/game/pac-xon" class="text-decoration-none text-dark" target="_blank">
+                    <div class="card game-card">
+                        <img src="imagenes/pacman.png" class="card-img-top" alt="Pac Xon">
+                        <div class="card-body">
+                            <h5 class="game-title">Pac Xon</h5>
+                            <span class="badge badge-info">Gratis</span>
+                            <p class="card-text">Jugar ahora</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mb-4">
+                <a href="https://www.crazygames.com/game/8-ball-pool" class="text-decoration-none text-dark" target="_blank">
+                    <div class="card game-card">
+                        <img src="imagenes/pool.jpeg" class="card-img-top" alt="8 Ball Pool">
+                        <div class="card-body">
+                            <h5 class="game-title">8 Ball Pool</h5>
+                            <span class="badge badge-info">Gratis</span>
+                            <p class="card-text">Jugar ahora</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Panel de Control -->
+    <section class="panel-control">
+        <div class="container">
+            <h2 class="text-white">Panel de Control</h2>
+            <p>Aquí puedes acceder al panel de control de todas las páginas.</p>
+            <a href="#" class="btn btn-primary">Acceder al Panel</a>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcade Tadeo - Contacto</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #2A3F54; /* Dark blue color for the body */
+            color: #fff;
+            padding-top: 60px; /* Padding for fixed navbar */
+        }
+        .navbar {
+            background-color: #343A40; /* Dark color for the navbar */
+        }
+        .contact-info {
+            background-color: #3A4F63; /* Blue color for the contact info section */
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        .panel-control {
+            background-color: #343A40; /* Dark color for the panel control */
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            color: #fff;
+        }
+        .form-control {
+            margin-bottom: 15px;
+        }
+        footer {
+            background-color: #343A40; /* Dark color for the footer */
+            padding: 10px;
+            margin-top: 20px;
+            color: #fff;
+            text-align: center;
+        }
+        .map-responsive {
+            overflow: hidden;
+            padding-bottom: 56.25%;
+            position: relative;
+            height: 0;
+        }
+        .map-responsive iframe {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+        .cta-section {
+            background-color: #1ABC9C; /* Teal color for the CTA section */
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .cta-section h2 {
+            margin-bottom: 20px;
+        }
+        .contact-form {
+            display: none;
+            background-color: #3A4F63; /* Blue color for the contact form */
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <a class="navbar-brand" href="index.html">Arcade Tadeo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="juegos.html">Juegos</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="contacto.html">Contacto <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>¿Tienes alguna pregunta o comentario?</h2>
+            <p>Ponte en contacto con nosotros y te responderemos lo antes posible.</p>
+            <button class="btn btn-light" onclick="toggleContactForm()">Contactar Ahora</button>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="form" class="contact-form">
+        <div class="container">
+            <h2>Formulario de Contacto</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre">
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo electrónico">
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje:</label>
+                    <textarea class="form-control" id="message" rows="5" placeholder="Escribe tu mensaje"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section id="contact" class="contact-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Información de Contacto</h2>
+                    <p><strong>Dirección:</strong> Calle Ficticia, 123, Ciudad Ficticia</p>
+                    <p><strong>Teléfono:</strong> +123 456 7890</p>
+                    <p><strong>Correo Electrónico:</strong> info@arcadetadeo.com</p>
+                </div>
+                <div class="col-md-6">
+                    <h2>Horario de Atención</h2>
+                    <p><strong>Lunes a Viernes:</strong> 9:00 AM - 6:00 PM</p>
+                    <p><strong>Sábados:</strong> 10:00 AM - 2:00 PM</p>
+                    <p><strong>Domingos:</strong> Cerrado</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map" class="contact-info">
+        <div class="container">
+            <h2>Ubicación</h2>
+            <div class="map-responsive">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243646.3627126074!2d-74.24789593543832!3d40.71277609912224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87cf867789c8bfb3%3A0x4dcd1b5bb9f5a847!2sNueva%20York%2C%20EE.%20UU.!5e0!3m2!1ses-419!2sco!4v1620257838302!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Panel de Control -->
+    <section class="panel-control">
+        <div class="container">
+            <h2>Registro</h2>
+            <p>Regístrate para obtener las actualizaciones antes que nadie.</p>
+            <a href="#" class="btn btn-primary">Registrarse</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Arcade Tadeo. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function toggleContactForm() {
+            const form = document.querySelector('.contact-form');
+            if (form.style.display === 'none' || form.style.display === '') {
+                form.style.display = 'block';
+            } else {
+                form.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
