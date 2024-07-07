@@ -1,196 +1,125 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page - Camisetas Personalizadas</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Arcade Tadeo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            background-color: #f8f9fa;
+            background-color: #2A3F54; /* Dark blue color for the body */
         }
-        .navbar {
-            background-color: #000; /* Negro */
+        .carousel-item {
+            height: 500px;
         }
-        .navbar-brand, .nav-link {
-            color: #fff !important;
+        .carousel-item img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
         }
-        .btn-primary {
-            background-color: #f68b1e; /* Naranja */
-            border-color: #f68b1e;
-        }
-        .btn-primary:hover {
-            background-color: #cc7000;
-            border-color: #cc7000;
-        }
-        .modal-content {
-            background-color: #1a1a1a; /* Negro */
+        .card {
+            background-color: #3A4F63; /* Blue color for the cards */
             color: #fff;
         }
-        .btn-primary-modal {
-            background-color: #007bff; /* Azul Opaco */
-            border-color: #007bff;
-        }
-        .btn-primary-modal:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
-        }
-        .form-control {
-            background-color: #333;
-            border: 1px solid #444;
-            color: #fff;
-        }
-        .feature-icon {
-            font-size: 4rem;
-            color: #f68b1e; /* Naranja */
-        }
-        .testimonial {
-            background-color: #333;
-            color: #fff;
-            padding: 2rem;
-            border-radius: 5px;
+        .discount-badge {
+            background-color: #ADD8E6; /* Light blue color for the discount badge */
+            color: #000;
         }
     </style>
 </head>
+
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="#">MiCamiseta</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Videojuegos</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#features">Características</a>
+                    <a class="nav-link" href="index.html">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#benefits">Beneficios</a>
+                    <a class="nav-link" href="juegos.html">Juegos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#testimonials">Testimonios</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contacto</a>
+                    <a class="nav-link" href="contacto.html">Contacto</a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <div class="container text-center mt-5">
-        <h1 class="text-dark">Bienvenido a MiCamiseta</h1>
-        <p class="lead text-secondary">Crea tu camiseta personalizada en minutos</p>
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#emailModal">
-            Suscríbete
-        </button>
-    </div>
-
-    <!-- Features Section -->
-    <div id="features" class="container mt-5">
-        <h2 class="text-center text-dark">Características</h2>
-        <div class="row text-center mt-4">
-            <div class="col-md-4">
-                <div class="feature-icon">
-                    <i class="fas fa-palette"></i>
-                </div>
-                <h3 class="text-dark mt-3">Diseños Personalizados</h3>
-                <p class="text-secondary">Crea y sube tus propios diseños únicos.</p>
+    <!-- Carousel -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="imagenes/pacman.png" class="d-block w-100" alt="Imagen 1">
             </div>
-            <div class="col-md-4">
-                <div class="feature-icon">
-                    <i class="fas fa-tshirt"></i>
-                </div>
-                <h3 class="text-dark mt-3">Variedad de Materiales</h3>
-                <p class="text-secondary">Elige entre una amplia gama de telas de alta calidad.</p>
+            <div class="carousel-item">
+                <img src="imagenes/bk.jpeg" class="d-block w-100" alt="Imagen 2">
             </div>
-            <div class="col-md-4">
-                <div class="feature-icon">
-                    <i class="fas fa-shipping-fast"></i>
-                </div>
-                <h3 class="text-dark mt-3">Envío Rápido</h3>
-                <p class="text-secondary">Recibe tus camisetas en tiempo récord.</p>
+            <div class="carousel-item">
+                <img src="imagenes/program.png" class="d-block w-100" alt="Imagen 3">
             </div>
         </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previo</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+        </a>
     </div>
 
-    <!-- Benefits Section -->
-    <div id="benefits" class="container mt-5">
-        <h2 class="text-center text-dark">Beneficios</h2>
-        <div class="row mt-4">
-            <div class="col-md-6">
-                <h3 class="text-dark">Fácil de usar</h3>
-                <p class="text-secondary">Nuestra plataforma es intuitiva y fácil de navegar.</p>
-            </div>
-            <div class="col-md-6">
-                <h3 class="text-dark">Soporte 24/7</h3>
-                <p class="text-secondary">Estamos aquí para ayudarte en cualquier momento.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Testimonials Section -->
-    <div id="testimonials" class="container mt-5">
-        <h2 class="text-center text-dark">Testimonios</h2>
-        <div class="row mt-4">
-            <div class="col-md-6">
-                <div class="testimonial">
-                    <p>"MiCamiseta ha revolucionado la forma en que diseño mis camisetas. La calidad es increíble y el servicio es rápido."</p>
-                    <p><strong>- Ana García</strong></p>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="testimonial">
-                    <p>"El proceso de personalización es muy sencillo y las camisetas son de alta calidad. ¡Muy recomendado!"</p>
-                    <p><strong>- Luis Fernández</strong></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contact Section -->
-    <div id="contact" class="container mt-5">
-        <h2 class="text-center text-dark">Contacto</h2>
-        <div class="row mt-4">
-            <div class="col-md-6">
-                <h3 class="text-dark">Dirección</h3>
-                <p class="text-secondary">123 Calle Principal, Ciudad, País</p>
-            </div>
-            <div class="col-md-6">
-                <h3 class="text-dark">Correo Electrónico</h3>
-                <p class="text-secondary">contacto@micamiseta.com</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Email Modal -->
-    <div class="modal fade" id="emailModal" tabindex="-1" aria-labelledby="emailModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="emailModalLabel">Suscríbete a nuestro boletín</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="email">Correo Electrónico</label>
-                            <input type="email" class="form-control" id="email" placeholder="Introduce tu correo electrónico">
+    <!-- Game Offers Section -->
+    <section class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="imagenes/cri.png" class="card-img-top" alt="Game 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Criquet</h5>
+                            <span class="badge discount-badge">Gratis</span>
+                            <p class="card-text">Proximamente</p>
                         </div>
-                        <button type="submit" class="btn btn-primary-modal">Enviar</button>
-                    </form>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="imagenes/kickm.png" class="card-img-top" alt="Game 2">
+                        <div class="card-body">
+                            <h5 class="card-title">MOTORUSH</h5>
+                            <span class="badge discount-badge">Gratis</span>
+                            <p class="card-text">Proximamente</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="imagenes/fbywg.jpeg" class="card-img-top" alt="Game 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Fireboy and Watergir</h5>
+                            <span class="badge discount-badge">Gratis</span>
+                            <p class="card-text">Proximamente</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
