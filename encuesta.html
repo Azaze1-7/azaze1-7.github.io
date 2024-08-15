@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de Satisfacción al Cliente</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #6dd5ed, #2193b0);
+            color: #333;
+        }
+        form {
+            margin: 20px auto;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+        h1 {
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        label {
+            display: block;
+            margin: 15px 0 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        select, input[type="radio"], textarea {
+            margin: 10px 0;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease-in-out;
+        }
+        select:focus, textarea:focus {
+            border-color: #2193b0;
+            outline: none;
+        }
+        textarea {
+            resize: none;
+        }
+        input[type="radio"] {
+            margin-right: 8px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #2193b0;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        button:hover {
+            background-color: #176a7c;
+        }
+        #resultados {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #ccc;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h2 {
+            color: #2193b0;
+        }
+        p {
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Encuesta de Satisfacción al Cliente</h1>
+    <form id="encuesta">
+        <label for="satisfaccion">1. ¿Qué tan satisfecho está con nuestro servicio?</label>
+        <select id="satisfaccion" name="satisfaccion">
+            <option value="Muy satisfecho">Muy satisfecho</option>
+            <option value="Satisfecho">Satisfecho</option>
+            <option value="Neutral">Neutral</option>
+            <option value="Insatisfecho">Insatisfecho</option>
+            <option value="Muy insatisfecho">Muy insatisfecho</option>
+        </select>
+
+        <label for="calidad">2. ¿Cómo calificaría la calidad de nuestro producto?</label>
+        <select id="calidad" name="calidad">
+            <option value="Excelente">Excelente</option>
+            <option value="Buena">Buena</option>
+            <option value="Regular">Regular</option>
+            <option value="Mala">Mala</option>
+            <option value="Pésima">Pésima</option>
+        </select>
+
+        <label>3. ¿El tiempo de respuesta fue adecuado?</label>
+        <input type="radio" id="respuesta-si" name="respuesta" value="Sí">
+        <label for="respuesta-si">Sí</label>
+        <input type="radio" id="respuesta-no" name="respuesta" value="No">
+        <label for="respuesta-no">No</label>
+
+        <label for="mejora">4. ¿Cómo podemos mejorar nuestro servicio?</label>
+        <textarea id="mejora" name="mejora" rows="4" placeholder="Escriba sus sugerencias aquí..."></textarea>
+
+        <label>5. ¿Volvería a utilizar nuestros servicios en el futuro?</label>
+        <input type="radio" id="volveria-si" name="volveria" value="Sí">
+        <label for="volveria-si">Sí</label>
+        <input type="radio" id="volveria-no" name="volveria" value="No">
+        <label for="volveria-no">No</label>
+
+        <label>6. ¿Recomendaría nuestro servicio a otros?</label>
+        <input type="radio" id="recomendaria-si" name="recomendaria" value="Sí">
+        <label for="recomendaria-si">Sí</label>
+        <input type="radio" id="recomendaria-no" name="recomendaria" value="No">
+        <label for="recomendaria-no">No</label>
+
+        <button type="button" onclick="enviarEncuesta()">Enviar</button>
+    </form>
+
+    <div id="resultados">
+        <h2>Resultados de la Encuesta</h2>
+        <p id="resultado-satisfaccion"></p>
+        <p id="resultado-calidad"></p>
+        <p id="resultado-respuesta"></p>
+        <p id="resultado-mejora"></p>
+        <p id="resultado-volveria"></p>
+        <p id="resultado-recomendaria"></p>
+    </div>
+
+    <script>
+        function enviarEncuesta() {
+            const satisfaccion = document.getElementById('satisfaccion').value;
+            const calidad = document.getElementById('calidad').value;
+            const respuesta = document.querySelector('input[name="respuesta"]:checked');
+            const mejora = document.getElementById('mejora').value;
+            const volveria = document.querySelector('input[name="volveria"]:checked');
+            const recomendaria = document.querySelector('input[name="recomendaria"]:checked');
+
+            document.getElementById('resultado-satisfaccion').textContent = `Satisfacción: ${satisfaccion}`;
+            document.getElementById('resultado-calidad').textContent = `Calidad del Producto: ${calidad}`;
+            document.getElementById('resultado-respuesta').textContent = `Tiempo de Respuesta: ${respuesta ? respuesta.value : "No seleccionado"}`;
+            document.getElementById('resultado-mejora').textContent = `Sugerencias de mejora: ${mejora || "No proporcionado"}`;
+            document.getElementById('resultado-volveria').textContent = `Volvería a utilizar el servicio: ${volveria ? volveria.value : "No seleccionado"}`;
+            document.getElementById('resultado-recomendaria').textContent = `Recomendaría nuestro servicio: ${recomendaria ? recomendaria.value : "No seleccionado"}`;
+        }
+    </script>
+</body>
+</html>
