@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Áreas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        select, input, button {
+            margin: 10px;
+            padding: 10px;
+        }
+        .input-container {
+            margin: 20px 0;
+        }
+        .figure {
+            width: 100px;
+            height: 100px;
+            margin: 20px auto;
+        }
+        #resultado {
+            margin-top: 20px;
+            padding: 15px;
+            border: 2px solid #000;
+            display: inline-block;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cálculo de Áreas</h1>
+    <label for="figura">Seleccione una figura:</label>
+    <select id="figura" onchange="mostrarInputs()">
+        <option value="circulo">Círculo</option>
+        <option value="cuadrado">Cuadrado</option>
+        <option value="triangulo">Triángulo</option>
+    </select>
+
+    <div id="imagen-figura"></div>
+
+    <div class="input-container" id="inputs"></div>
+
+    <button onclick="calcularArea()">Calcular</button>
+
+    <div id="resultado">
+        <span>Área: </span><span id="valor-area">0</span>
+    </div>
+
+    <script>
+        function mostrarInputs() {
+            const figura = document.getElementById('figura').value;
+            const inputsContainer = document.getElementById('inputs');
+            const imagenFigura = document.getElementById('imagen-figura');
+
+            inputsContainer.innerHTML = '';
+            imagenFigura.innerHTML = '';
+
+            if (figura === 'circulo') {
+                inputsContainer.innerHTML = '<label for="radio">Radio:</label><input type="number" id="radio" min="0">';
+                imagenFigura.innerHTML = '<div class="figure" style="border-radius: 50%; background: yellow;"></div>';
+            } else if (figura === 'cuadrado') {
+                inputsContainer.innerHTML = '<label for="lado">Lado:</label><input type="number" id="lado" min="0">';
+                imagenFigura.innerHTML = '<div class="figure" style="background: yellow;"></div>';
+            } else if (figura === 'triangulo') {
+                inputsContainer.innerHTML = `
+                    <label for="base">Base:</label><input type="number" id="base" min="0"><br>
+                    <label for="altura">Altura:</label><input type="number" id="altura" min="0">
+                `;
+                imagenFigura.innerHTML = '<div class="figure" style="width: 0; height: 0; border-left: 50px solid transparent; border-right: 50px solid transparent; border-bottom: 100px solid yellow;"></div>';
+            }
+        }
+
+        function calcularArea() {
+            const figura = document.getElementById('figura').value;
+            let area = 0;
+            
+            if (figura === 'circulo') {
+                const radio = document.getElementById('radio').value;
+                area = Math.PI * Math.pow(radio, 2);
+            } else if (figura === 'cuadrado') {
+                const lado = document.getElementById('lado').value;
+                area = lado * lado;
+            } else if (figura === 'triangulo') {
+                const base = document.getElementById('base').value;
+                const altura = document.getElementById('altura').value;
+                area = (base * altura) / 2;
+            }
+
+            document.getElementById('valor-area').textContent = area.toFixed(2);
+        }
+
+        // Mostrar los inputs para la figura por defecto al cargar la página
+        mostrarInputs();
+    </script>
+</body>
+</html>
