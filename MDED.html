@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorías Desplegables</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+            transition: background-color 0.3s ease;
+            margin: 0;
+        }
+
+        .category {
+            margin: 10px auto;
+            padding: 15px;
+            background-color: #ddd;
+            border: 2px solid #aaa;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .category:hover {
+            background-color: #ccc;
+            transform: scale(1.02);
+        }
+
+        .category-content {
+            margin: 10px auto;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: max-height 0.5s ease, opacity 0.5s ease;
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            width: 80%;
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .category-content.visible {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        .adventure-bg {
+            background-color: #ffcc99;
+        }
+
+        .strategy-bg {
+            background-color: #99ccff;
+        }
+
+        .rpg-bg {
+            background-color: #99ff99;
+        }
+    </style>
+</head>
+<body>
+    <h1>Categorías Desplegables</h1>
+    <p>Haga clic en una categoría para desplegar su contenido y cambiar el color de fondo.</p>
+
+    <div class="category" id="cat1">Juegos de Aventura</div>
+    <div class="category-content" id="content1">
+        <p>Explora mundos extensos y resuelve acertijos. Ejemplos: "The Legend of Zelda", "Uncharted".</p>
+    </div>
+
+    <div class="category" id="cat2">Juegos de Estrategia</div>
+    <div class="category-content" id="content2">
+        <p>Planifica y toma decisiones. Ejemplos: "Age of Empires", "Civilization".</p>
+    </div>
+
+    <div class="category" id="cat3">Juegos de Rol</div>
+    <div class="category-content" id="content3">
+        <p>Asume el papel de personajes en mundos ficticios. Ejemplos: "Final Fantasy", "The Elder Scrolls".</p>
+    </div>
+
+    <script>
+        function showCategory(categoryId, colorClass) {
+            document.querySelectorAll('.category-content').forEach(content => {
+                content.classList.remove('visible');
+            });
+
+            document.body.classList.remove('adventure-bg', 'strategy-bg', 'rpg-bg');
+
+            const selectedContent = document.getElementById(categoryId);
+            selectedContent.classList.add('visible');
+
+            document.body.classList.add(colorClass);
+        }
+
+        document.querySelectorAll('.category').forEach(category => {
+            category.addEventListener('click', function() {
+                const id = category.id.replace('cat', 'content');
+                const color = {
+                    'cat1': 'adventure-bg',
+                    'cat2': 'strategy-bg',
+                    'cat3': 'rpg-bg'
+                }[category.id];
+                showCategory(id, color);
+            });
+        });
+    </script>
+</body>
+</html>
