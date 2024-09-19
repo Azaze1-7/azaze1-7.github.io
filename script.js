@@ -1,25 +1,27 @@
-document.getElementById('mostrarFormulario').addEventListener('click', function() {
-    document.getElementById('formulario').style.display = 'block';
-    document.getElementById('tarjeta').style.display = 'none';
-    this.style.display = 'none';
-});
+function calcularSigno() {
+    const añoNacimiento = document.getElementById('año-nacimiento').value;
+    const resto = añoNacimiento % 12;
 
-function crearTarjeta() {
-    const nombre = document.getElementById("Nombre").value;
-    const puesto = document.getElementById("Puesto").value;
+    const imagenes = document.querySelectorAll('.signo-imagen');
+    imagenes.forEach(img => img.style.display = 'none');
 
-    if (nombre && puesto) {
-        const tarjetaHTML = `
-            <h3>Felicitaciones, ${nombre}!</h3>
-            <p>Te damos la bienvenida como nuestro nuevo <strong>${puesto}</strong>.</p>
-            <p>¡Esperamos grandes cosas de ti!</p>
-        `;
+    const signos = [
+        { nombre: 'Mono', id: 'mono' },
+        { nombre: 'Gallo', id: 'gallo' },
+        { nombre: 'Perro', id: 'perro' },
+        { nombre: 'Cerdo', id: 'cerdo' },
+        { nombre: 'Rata', id: 'rata' },
+        { nombre: 'Buey', id: 'buey' },
+        { nombre: 'Tigre', id: 'tigre' },
+        { nombre: 'Conejo', id: 'conejo' },
+        { nombre: 'Dragón', id: 'dragon' },
+        { nombre: 'Serpiente', id: 'serpiente' },
+        { nombre: 'Caballo', id: 'caballo' },
+        { nombre: 'Cabra', id: 'cabra' }
+    ];
 
-        const tarjeta = document.getElementById('tarjeta');
-        tarjeta.innerHTML = tarjetaHTML;
-        tarjeta.style.display = 'block';
-        document.getElementById('formulario').style.display = 'none';
-    } else {
-        alert("Por favor completa todos los campos.");
-    }
+    const signo = signos[resto];
+    
+    document.getElementById('signo').textContent = "Tu signo es: " + signo.nombre;
+    document.getElementById(signo.id).style.display = 'block';
 }
