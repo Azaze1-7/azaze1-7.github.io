@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horóscopo Chino</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <img src="./imagenes/horoscopo_chino.jpeg" alt="Horóscopo Chino" class="imagen-general">
+    <div class="contenido">
+        <h1>Descubre tu Signo del Horóscopo Chino</h1>
+        <p>Introduce tu año de nacimiento:</p>
+        <input type="number" id="año-nacimiento" placeholder="Ej. 1990">
+        <button onclick="calcularSigno()">Calcular Signo</button>
+        
+        <div id="resultado">
+            <h2 id="signo"></h2>
+            <div id="imagenes">
+                <img id="mono" class="signo-imagen" src="./imagenes/mono.jpeg" alt="Mono">
+                <img id="gallo" class="signo-imagen" src="./imagenes/gallo.jpeg" alt="Gallo">
+                <img id="perro" class="signo-imagen" src="./imagenes/perro.jpeg" alt="Perro">
+                <img id="cerdo" class="signo-imagen" src="./imagenes/cerdo.jpeg" alt="Cerdo">
+                <img id="rata" class="signo-imagen" src="./imagenes/rata.jpeg" alt="Rata">
+                <img id="buey" class="signo-imagen" src="./imagenes/buey.jpeg" alt="Buey">
+                <img id="tigre" class="signo-imagen" src="./imagenes/tigre.jpeg" alt="Tigre">
+                <img id="conejo" class="signo-imagen" src="./imagenes/conejo.jpeg" alt="Conejo">
+                <img id="dragon" class="signo-imagen" src="./imagenes/dragon.jpeg" alt="Dragón">
+                <img id="serpiente" class="signo-imagen" src="./imagenes/serpiente.jpeg" alt="Serpiente">
+                <img id="caballo" class="signo-imagen" src="./imagenes/caballo.jpeg" alt="Caballo">
+                <img id="cabra" class="signo-imagen" src="./imagenes/cabra.jpeg" alt="Cabra">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
