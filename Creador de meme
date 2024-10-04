@@ -1,1 +1,57 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creador de Memes</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header>
+    <h1>Crea tu Meme</h1>
+  </header>
+
+  <section class="controls">
+    <div class="step">
+      <label for="text1">Texto Superior:</label>
+      <input type="text" id="text1" placeholder="Escribe el texto superior">
+    </div>
+
+    <div class="step">
+      <label for="text2">Texto Inferior:</label>
+      <input type="text" id="text2" placeholder="Escribe el texto inferior">
+    </div>
+
+    <div class="step">
+      <label for="fontSize">Tamaño de Fuente:</label>
+      <input type="range" id="fontSize" min="10" max="60" value="20">
+    </div>
+
+    <div class="step">
+      <label for="textColor">Color de Texto:</label>
+      <input type="color" id="textColor" value="#000000">
+    </div>
+
+    <div class="step">
+      <label for="imageTemplate">Elige una Plantilla:</label>
+      <div class="image-options">
+        <!-- Las imágenes se cargarán dinámicamente aquí -->
+      </div>
+    </div>
+
+    <button id="generate">Generar Meme</button>
+  </section>
+
+  <section id="output">
+    <div id="meme">
+      <img src="" alt="Plantilla Seleccionada" id="selectedImage">
+      <div id="topText" class="meme-text"></div>
+      <div id="bottomText" class="meme-text"></div>
+    </div>
+    <button id="showResult">Mostrar Resultado</button>
+  </section>
+
+  <script src="funciones.js"></script>
+</body>
+</html>
