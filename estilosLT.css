@@ -1,0 +1,49 @@
+#seccion {
+    padding: 20px;
+}
+
+.header {
+    background-color: #a5f785;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.config {
+    margin-bottom: 20px;
+}
+
+.colorNegro { 
+    color: black; 
+}
+
+.colorVerde { 
+    color: green; 
+}
+
+.colorRojo { 
+    color: red; 
+}
+
+.btn { 
+    font-size: 20px; 
+    margin: 5px; 
+    padding: 10px; 
+    cursor: pointer; 
+}
+
+.completed { 
+    text-decoration: line-through; 
+    color: gray; 
+}
+
+.barra-progreso { 
+    background-color: #e0e0e0; 
+    height: 20px; 
+    border-radius: 5px; 
+    overflow: hidden; 
+}
+
+.progreso { 
+    background-color: #4caf50; 
+    height: 100%; 
+}

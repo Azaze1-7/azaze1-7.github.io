@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas Personalizable</title>
+    <link rel="stylesheet" href="estilosLT.css">
+    <script src="Vue3.js"></script>
+</head>
+<body>
+<div id="seccion">
+    <div class="header">
+        <h3>{{ validacion }}</h3>
+        <input v-model="nombre" placeholder="Escribe un nombre" @input="validar">
+        <p :class="colorValidacion">{{ validacion }}</p>
+    </div>
+
+    <div class="config">
+        <h3>Opciones de Personalización</h3>
+        <label>Color de fondo:
+            <input type="color" v-model="colorFondo">
+        </label>
+        <label>Tamaño de fuente:
+            <input type="range" v-model="tamanioFuente" min="12" max="24">
+        </label>
+        <label>Ordenar tareas:
+            <select v-model="ordenTareas">
+                <option value="nombre">Por nombre</option>
+                <option value="fecha">Por fecha</option>
+                <option value="prioridad">Por prioridad</option>
+            </select>
+        </label>
+    </div>
+
+    <div class="task-list" :style="{ backgroundColor: colorFondo }">
+        <h3>Lista de Tareas</h3>
+        <input v-model="nuevaTarea" placeholder="Nueva Tarea">
+        <button @click="agregarTarea" class="btn">+</button>
+
+        <ul>
+            <li v-for="(tarea, index) in tareasOrdenadas" :key="index" :class="{completed: tarea.completada}" :style="{ fontSize: tamanioFuente + 'px' }">
+                {{ tarea.texto }} - {{ tarea.prioridad }}
+                <button @click="toggleTarea(index)" class="btn" :style="{ color: tarea.completada ? 'red' : 'green' }">
+                    {{ tarea.completada ? '-' : '+' }}
+                </button>
+            </li>
+        </ul>
+
+        <div class="barra-progreso">
+            <div class="progreso" :style="{ width: porcentajeCompletado + '%' }"></div>
+        </div>
+        <p>{{ porcentajeCompletado.toFixed(1) }}% de tareas completadas</p>
+    </div>
+</div>
+
+<script src="scriptLT.js"></script>
+</body>
+</html>
